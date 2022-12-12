@@ -7,12 +7,7 @@ function sortedFrequency(arr, val) {
     let firstIdx;
     let lastIdx;
 
-
-
-    // do I have the right val
-    //  am I at the first occurrence of the value?
-    //  What is the last occurrence of the value?  
-  
+ 
     // keep the same b/c it may be possible that there's no match
     while (leftIdx <= rightIdx) {
       // find the middle value
@@ -20,7 +15,6 @@ function sortedFrequency(arr, val) {
       let middleVal = arr[middleIdx];
 
 
-  
       if (middleVal < val && !foundVal) {
         // middleVal is too small, look at the right half
         leftIdx = middleIdx + 1;
@@ -38,10 +32,6 @@ function sortedFrequency(arr, val) {
 
       // after the a matching val is found
       // start converging on the left and right instances
-
-      // if value never found, exits loop and returns -1
-
-
 
       if (foundVal && !foundFirstInst || !foundLastInst){
         let leftMiddleIdx = Math.floor((firstIdx - leftIdx)/2);
@@ -88,8 +78,6 @@ function sortedFrequency(arr, val) {
           return frequency;
         }
       }
-
-
     }
     
     // left and right pointers crossed, val isn't in arr

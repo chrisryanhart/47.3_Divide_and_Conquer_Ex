@@ -3,9 +3,7 @@ function findRotatedIndex(arr, val) {
     let leftVal = arr[leftIdx];
     let rightIdx = arr.length - 1;
     let rightVal = arr[rightIdx];
-    // leftIncreaseing = false?
-    // if (leftVal === val) return leftIdx;
-    // if (rightVal === val) return rightIdx;
+
   
     while (leftIdx <= rightIdx) {
       // find the middle value
@@ -14,16 +12,13 @@ function findRotatedIndex(arr, val) {
         let middleIdx = Math.floor((leftIdx + rightIdx) / 2);
         let middleVal = arr[middleIdx];
 
-        //  
-        // if (leftIdx < val && val < middleVal){
-
-        // }
-            
+        // if we found the index 
         if (val === middleVal){
             return middleIdx;
         } else if (leftIdx === rightIdx){
             return -1;
         } 
+        // shift the right or left index, depeding on value and position
         else if (val < middleVal && middleVal < rightVal){
             rightIdx = middleIdx - 1;
         }else if (val > leftVal && val < middleVal){
@@ -38,13 +33,3 @@ function findRotatedIndex(arr, val) {
 }
 
 module.exports = findRotatedIndex
-
-// if (val === middleVal){
-//     return middleIdx;
-// } else if (val < middleVal && middleVal < rightVal){
-//     rightIdx = middleIdx - 1;
-// }else if (val < middleVal && middleVal > rightVal){
-//     leftIdx = middleIdx + 1;
-// }else if (val > middleVal){
-//     leftIdx = middleIdx + 1;
-// }
