@@ -33,20 +33,8 @@ function findRotatedIndex(arr, val) {
         }else if (val > middleVal){
             leftIdx = middleIdx + 1;
         }
-    
-        // if (middleVal < val) {
-        //     // middleVal is too small, look at the right half
-        //     leftIdx = middleIdx + 1;
-        // } else if (middleVal > val) {
-        //     // middleVal is too large, look at the left half
-        //     rightIdx = middleIdx - 1;
-        // } else {
-        //     // we found our value!
-        //     return middleIdx;
-        // }
         }
     
-    // left and right pointers crossed, val isn't in arr
 }
 
 module.exports = findRotatedIndex
